@@ -13,14 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show files
-        run: ls -la
-
       - name: Compile C
-        run: gcc main.c -o main-c
+        run: gcc pattern.c -o pattern-c
 
       - name: Run C
-        run: ./main-c
+        run: ./pattern-c
 
   cpp:
     name: Build C++
@@ -31,10 +28,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compile C++
-        run: g++ main.cpp -o main-cpp
+        run: g++ circle.cpp -o circle-cpp
 
       - name: Run C++
-        run: ./main-cpp
+        run: ./circle-cpp
 
   java:
     name: Build Java
@@ -43,9 +40,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Clean old Java classes
-        run: find . -name "*.class" -delete
 
       - name: Compile Java
         run: javac Demo.java
