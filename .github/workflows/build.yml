@@ -44,6 +44,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Clean old Java classes
+        run: find . -name "*.class" -delete
+
       - name: Compile Java
         run: javac Demo.java
 
