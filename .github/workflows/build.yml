@@ -1,0 +1,48 @@
+name: Build C C++ Java
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  c:
+    name: Build C
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile C
+        run: gcc main.c -o main-c
+
+      - name: Run C
+        run: ./main-c
+
+  cpp:
+    name: Build C++
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile C++
+        run: g++ main.cpp -o main-cpp
+
+      - name: Run C++
+        run: ./main-cpp
+
+  java:
+    name: Build Java
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Java
+        run: javac Main.java
+
+      - name: Run Java
+        run: java Main
